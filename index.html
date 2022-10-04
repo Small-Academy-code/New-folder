@@ -1,0 +1,770 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduford</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    nav{
+      padding: 20px;
+      display: flex;
+      position: relative;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      background-color: #333;
+    }
+    .logo_img{
+      width: 50%;
+      min-width: 120px
+    }
+    .nav_link{
+      color: #ffff;
+      text-decoration: none;
+      margin-left: 20px;
+      margin-right: 20px;
+      font-family: "Montserrat";
+      transition: all 0.5s;
+      background: none;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .nav_list{
+      display: flex;
+      margin-top:0px;
+      margin-left: auto;
+    }
+    .nav_btn{
+      text-decoration: none;
+      color: white;
+      transition: all 0.5s;
+      font-weight: 600;
+    }
+    .nav_btn::after{
+      content: '';
+      width: 0%;
+      height: 3px;
+      background: red;
+      display: block;
+      margin: auto;
+      transition: all 0.1s;
+    }
+    .nav_btn:hover::after{
+      width: 100%;
+    }
+    .nav_btn::before{
+      content: '';
+      width: 0%;
+      height: 3px;
+      background: red;
+      display: block;
+      margin: auto;
+      transition: all 0.5s;
+    }
+    .nav_btn:hover::before{
+      width: 100%;
+    }
+    .header-title{
+      text-align: center;
+    }
+    h1{
+      font-size: 70px;
+      font-family: "Montserrat";
+      color: white;
+      font-weight: 300;
+      padding-top: 200px;
+      padding-bottom: 20px;
+      width: 65%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header{
+      background-image:linear-gradient(90deg, rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.453)), url("banner.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .header-p{
+      font-family: "Montserrat";
+      font-weight: 500;
+      text-align: center;
+      font-size: 13px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      color: white;
+    }
+    .header_text{
+      height: 100vh;
+    }
+    h2{
+      font-family: "Montserrat";
+      text-align: center;
+      margin: 150px;
+      font-size: 50px;
+    }
+    .about{
+      margin-bottom: 20px;
+    }
+    .about_sec{
+      display: flex;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+    .about_img{
+      width: 50%;
+      max-width: 600px;
+    }
+    h3{
+      font-family: 'Montserrat';
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .about_sec_p{
+      font-size: 15px;
+      font-family: "Montserrat";
+      font-weight: 300;
+      width: 70%;
+    }
+    .about_btn{
+      font-family: "Montserrat";
+      font-size: 20px;
+      background:none;
+      border: none;
+      margin-top: 30px;
+      color: rgb(159, 0, 0);
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+    .about_btn::after{
+      content: '';
+      width: 0%;
+      height: 5px;
+      background: red;
+      display: block;
+      margin: auto;
+      transition: all 0.5s;
+    }
+    .about_btn:hover::after{
+      width: 100%;
+    } 
+    .courses_cols{
+      display: flex;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .course_col{
+      padding: 10px;
+      text-align: center;
+      margin: 30px;
+      background-color: rgba(179, 245, 202, 0.181);
+      border-radius: 10px;
+      width: 100%;
+    }
+    .course_title{
+      font-family: "Montserrat";
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    .course_sub_heading{
+      text-align: center;
+      padding: 10px;
+    }
+    .course_sub_heading1, .facilities_heading, .campus_heading,.blog_sub_heading{
+      font-size: 25px;
+      font-family: "Montserrat";
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .course_sub_heading_p{
+      font-size: 20px;
+      font-family: "Montserrat";
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 50px;
+    }
+    .facilities{
+      padding: 10px;
+      margin-top: 50px;
+    }
+    .facilities_cols{
+      display: flex;
+    }
+    .facilities_col{
+      width: 40%;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: whitesmoke;
+    }
+    .f_img{
+      width: 100%;
+      border-radius: 10px;
+    }
+    .facilities_heading{
+      text-align: center;
+      margin: 10px;
+    }
+    .f_col_title{
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .f_col_desc{
+      font-family: "Montserrat";
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .campus_heading{
+      text-align: center;
+      margin: 60px;
+    }
+    .campus_subheading{
+      font-family: "Montserrat";
+      text-align: center;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .campus_imgs{
+      display: flex;
+    }
+    .campus_img{
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      margin: 30px;
+      padding: 10px;
+      text-align: center;
+      font-size: 25px;
+      font-family: "Montserrat";
+      border-radius: 10px;
+      height: 80vh;
+      background-position: center;
+      background-size: cover;
+      transition: all 0.5s;
+    }
+    .campus_img_1{
+      background-image: url("london.png");
+    }
+    .campus_img_2{
+      background-image: url("newyork.png");
+    }
+    .campus_img_3{
+      background-image: url("washington.png");
+    }
+    .blog_sub_heading{
+      text-align: center;
+    }
+    .categories{
+      display: flex;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+    .certificate{
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .post_categories{
+      width: 90%;
+      margin-left: 50px;
+    }
+    .post_category{
+      font-family: "Montserrat";
+      padding: 5px;
+      background-color: rgb(255, 0, 0);
+      color: white;
+      width: 100%;
+      font-weight: 600;
+    }
+    .ba, .da, .ma, .cs, .ac, .j, .c{
+      display: flex;
+      font-family: "Montserrat";
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .ba2, .da2, .ma2, .cs2, .ac2, .j2, .c2{
+      margin-left: auto;
+    }
+    .blog_p{
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 12px;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 100px;
+    }
+    .blog_sub_heading_2{
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .blog_form{
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 100px;
+    }
+    .blog_form_title{
+      font-family: "Montserrat";
+      font-weight: 600;
+      margin: 20px;
+      font-size: 25px;
+      color: rgb(166, 4, 4);
+    }
+    .blog_comment_name_input, .blog_comment_email_input{
+      margin: 20px;
+      border: none;
+      background-image:linear-gradient(90deg, rgba(255, 0, 0, 0.215), whitesmoke, white             );
+      padding: 10px;
+      font-size: 20px;
+      width: 90%;
+      font-family: "Montserrat";
+      font-weight: 600;
+      outline: none;
+      transition: all 0.5s;
+    }
+    .blog_comment_name_input:focus, .blog_comment_email_input:focus{
+      color:white;
+      background-color: rgba(255, 0, 0, 0.215);
+    }
+    .message{
+      margin: 20px;
+      border: none;
+      background-color: whitesmoke;
+      width: 90%;
+      outline: none;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      padding: 10px;
+      font-weight: 400;
+    }
+    .comment_btn{
+      font-family: "Montserrat";
+      font-size: 20px;
+      border: none;
+      outline: none;
+      background-color: whitesmoke;
+      padding: 10px;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.5s;
+      border-radius: 5px;
+      border: solid 1px black;
+    }
+    .comment_btn:hover{
+      background-color: lightgray;
+    }
+    .review_row_1, .review_row_2{
+      margin: 10px;
+      width:70% ;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100px;
+    }
+    .review_box_1, .review_box_2{
+      display: flex;
+      width: 50%;
+      padding: 10px;
+      background-color: whitesmoke;
+      border-radius: 10px;
+    }
+    .review_box_2{
+      margin-left: auto;
+    }
+    .review_box_1_img{
+      width: 80%;
+      border-radius: 1000000px;
+    }
+    .review_box_1_comment, .review_box_2_comment{
+      font-family: "Montserrat";
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .review_box_1_name, .review_box_2_name{
+      font-family: "Montserrat";
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .review_title{
+      font-family:"Montserrat";
+      font-weight: 500;
+      font-size: 30px;
+    }
+    .review_subtitle{
+      font-family: "Montserrat";
+      font-weight: 400;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -100px;
+      text-align: center;
+    }
+    .contact_container{
+      width: 70%;
+      background-image:linear-gradient(90deg, rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.453)), url("banner2.jpg");
+      margin-left: auto;
+      margin-right: auto;
+      padding: 100px;
+      border-radius: 10px;
+      background-size: cover;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .contact_subtitle{
+      font-family: "Montserrat";
+      font-size: 25px;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .contact_btn{
+      font-family: "Montserrat";
+      font-weight: 700;
+      padding: 10px;
+      background: none;
+      color: rgb(254, 239, 239);
+      border: solid white 1px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+    .contact_btn:hover{
+      background-color: red;
+      border:red 1px solid;
+    }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: red; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #000000; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- NAV -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" class="logo_img">
+        </a>
+      </div>
+      <div class="nav_list">
+        <button class="nav_link"><a class="nav_btn" href="#about" >ABOUT</a></button>
+        <button class="nav_link"><a class="nav_btn" href="#courses" >COURSES</a></button>
+        <button class="nav_link"><a class="nav_btn" href="#blog" >BLOG</a></button>
+        <button class="nav_link"><a class="nav_btn" href="#reviews" >REVIEWS</a></button>
+        <button class="nav_link"><a class="nav_btn" href="#contact" >CONTACT</a></button>
+      </div>
+    </nav>
+    <!-- NAV -->
+    <!-- Header Title -->
+    <div class="header_text">
+      <div class="header-title">
+        <h1>World's Largest University</h1>
+      </div>   
+      <div class="header-para">
+        <p class="header-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+    </div>
+    </header>
+    <!-- Header Title -->
+    <!-- About -->
+    <div class="about" id="about">
+      <h2>About</h2>
+      <div class="about_sec">
+        <div class="about_sec_text">
+          <h3>We are the World's Largest University</h3>
+          <p class="about_sec_p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <button class="about_btn">Explore Now</button>
+        </div>
+        <img src="about.jpg" class="about_img" >
+      </div>
+      <!-- Facilities comes under the about section -->
+      <!-- Facilities -->
+      <div class="facilities">
+        <div class="facilities_heading">Facilities</div>
+        <div class="facilities_cols">
+          <div class="facilities_col f_col1">
+            <img src="basketball.png" class="f_img">
+            <div class="f_col_title">Larget Play Ground</div>
+            <div class="f_col_desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+          <div class="facilities_col f_col2">
+            <img src="library.png" class="f_img">
+            <div class="f_col_title">World Class Library</div>
+            <div class="f_col_desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis
+              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+          <div class="facilities_col f_col3">
+            <img src="cafeteria.png" class="f_img">
+            <div class="f_col_title">Healthy Food</div>
+            <div class="f_col_desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis
+              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Facilities -->
+    </div>
+    <!-- About -->
+    <!-- Courses -->
+    <div class="courses" id="courses">
+      <h2>Courses</h2>
+      <div class="course_sub_heading">
+        <div class="course_sub_heading1">
+          Courses We offer
+        </div>
+        <div class="course_sub_heading_p">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.
+        </div>
+      </div>
+      <div class="courses_cols">
+        <div class="course_col">
+          <div class="course_title">Intermediate</div>
+          <div class="course_about">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Eu ultrices vitae auctor eu
+            augue ut lectus arcu. Dignissim enim sit amet venenatis urna cursus. Congue mauris rhoncus aenean vel. Sed risus
+            ultricies tristique nulla aliquet enim tortor. Molestie ac feugiat sed lectus. Ultricies lacus sed turpis tincidunt id
+            aliquet risus feugiat. Aliquam faucibus purus in massa. Neque viverra justo nec ultrices dui sapien eget mi. Magna
+            fermentum iaculis eu non diam. Sem et tortor consequat id porta.
+          </div>
+        </div>
+        <div class="course_col">
+          <div class="course_title">Graduation</div>
+          <div class="course_about">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Eu ultrices vitae auctor eu
+            augue ut lectus arcu. Dignissim enim sit amet venenatis urna cursus. Congue mauris rhoncus aenean vel. Sed risus
+            ultricies tristique nulla aliquet enim tortor. Molestie ac feugiat sed lectus. Ultricies lacus sed turpis tincidunt id
+            aliquet risus feugiat. Aliquam faucibus purus in massa. Neque viverra justo nec ultrices dui sapien eget mi. Magna
+            fermentum iaculis eu non diam. Sem et tortor consequat id porta.
+          </div>
+        </div>
+        <div class="course_col">
+          <div class="course_title">Post Graduation</div>
+          <div class="course_about">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Eu ultrices vitae auctor eu
+            augue ut lectus arcu. Dignissim enim sit amet venenatis urna cursus. Congue mauris rhoncus aenean vel. Sed risus
+            ultricies tristique nulla aliquet enim tortor. Molestie ac feugiat sed lectus. Ultricies lacus sed turpis tincidunt id
+            aliquet risus feugiat. Aliquam faucibus purus in massa. Neque viverra justo nec ultrices dui sapien eget mi. Magna
+            fermentum iaculis eu non diam. Sem et tortor consequat id porta.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Courses -->
+    <!-- Campus -->
+    <div class="campus">
+      <div class="campus_heading">Global Campus</div>
+      <div class="campus_subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua.</div>
+      <div class="campus_imgs">
+        <div class="campus_img campus_img_1">LONDON</div>
+        <div class="campus_img campus_img_2">NEW YORK</div>
+        <div class="campus_img campus_img_3">WASHINGTON</div>
+      </div>
+    </div>
+    <!-- Campus -->
+    <!-- Blog -->
+    <div class="blog" id="blog">
+      <h2>Blog</h2>
+      <div class="blog_sub_heading">Our Certificate & Online Programs For 2022</div>
+      <div class="categories">
+        <img src="certificate.jpg" class="certificate">
+        <div class="post_categories">
+          <div class="post_category">POST CATEGORIES</div>
+          <div class="ba">
+            <div class="ba1">Business Analytics</div>
+            <div class="ba2">21</div>
+          </div>
+          <div class="da">
+            <div class="da1">Data Science</div>
+            <div class="da2">28</div>
+          </div>
+          <div class="ma">
+            <div class="ma1">Machine Learning</div>
+            <div class="ma2">15</div>
+          </div>
+          <div class="cs">
+            <div class="cs1">Computer Science</div>
+            <div class="cs2">34</div>
+          </div>
+          <div class="ac">
+            <div class="ac1">AutoCAD</div>
+            <div class="ac2">42</div>
+          </div>
+          <div class="j">
+            <div class="j1">Journalism</div>
+            <div class="j2">22</div>
+          </div>
+          <div class="c">
+            <div class="c1">Commerce</div>
+            <div class="cs2">13</div>
+          </div>
+        </div>
+      </div>
+      <div class="online_programs">
+        <div class="blog_sub_heading blog_sub_heading_2">Our Certificate & Online Programs</div>
+        <div class="blog_p">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <br> <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <br> <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <br> <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+        </div>
+      </div>
+      <div class="blog_form">
+        <div class="blog_form_title">Leave a comment</div>
+        <input placeholder="Enter Name" class="blog_comment_name_input"> <br>
+        <input placeholder="Enter email" class="blog_comment_email_input"> <br>
+        <textarea name="" id="" cols="30" rows="10" class="message"></textarea>
+        <button class="comment_btn">Comment</button>
+      </div>
+    </div>
+    <!-- Blog -->
+    <!-- Reviews -->
+    <div class="review" id="reviews">
+      <h2 class="review_title">What Our Students Have To Say</h2>
+      <div class="review_subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+      </div>
+      <div class="review_boxes">
+        <div class="review_row_1">
+          <div class="review_box_1">
+            <div class="review_box_1_img_container">
+              <img src="user1.jpg" class="review_box_1_img">
+            </div>
+            <div class="review_box_1_desc">
+              <div class="review_box_1_comment">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident
+              </div>
+              <div class="review_box_1_name">Christine Berkley</div>
+            </div>
+          </div>
+        </div>
+        <div class="review_row_2">
+          <div class="review_box_2">
+            <div class="review_box_2_img_container">
+              <img src="user2.jpg" class="review_box_1_img">
+            </div>
+            <div class="review_box_2_desc">
+              <div class="review_box_2_comment">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident
+              </div>
+              <div class="review_box_2_name">David Byer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Reviews -->
+    <!-- Contact -->
+    <div class="contact" id="contact">
+      <h2>Contact</h2>
+      <div class="contact_container">
+        <div class="contact_subtitle">
+          Enroll For Various Online Courses Anywhere From The World
+        </div>
+        <button class="contact_btn">CONTACT US</button>
+      </div>
+    </div>
+    <!-- Contact -->
+</body>
+</html>
